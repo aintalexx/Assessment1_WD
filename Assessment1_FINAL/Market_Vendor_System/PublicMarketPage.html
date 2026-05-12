@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barangay 3 — Public Market Vendor Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <div class="caloocan-typography">
+      <img src="../Assets/Images/Caloocan_Typography.png" alt="Caloocan Typography">
+    </div>
+    <div class="caloocan-logo">
+      <img src="../Assets/Images/Caloocan_Logo.png" alt="Caloocan Logo">
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+<!-- Return Button -->
+  <a class="back-home-btn" href="../Main_Page/index.html" aria-label="Back to Homepage" title="Back to Homepage">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M9 14l-4-4 4-4" />
+      <path d="M5 10h9a5 5 0 0 1 0 10h-1" />
+    </svg>
+  </a>
+
+  <!-- Page Header Banner -->
+  <div class="page-header-banner market-banner">
+    <h1 class="banner-title">Public Market Vendor Registration</h1>
+    <p class="banner-sub">
+      Register and monitor public market vendors for improved health and safety standards.
+    </p>
+  </div>
+
+  <!-- Form -->
+  <form id="vendorForm" novalidate>
+
+    <!-- Vendor Information -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-icon" style="background:rgba(92,56,32,.1);">🏪</div>
+        <div>
+          <div class="form-card-title">Market Vendor Registration</div>
+          <div class="form-card-sub">Register and manage vendors in the barangay public market</div>
+        </div>
+      </div>
+
+      <!-- Business Name -->
+      <div class="form-group">
+        <label class="form-label">Business / Stall Name <span class="req">*</span></label>
+        <input type="text" class="form-control" id="v_business"
+              placeholder="ex. Aling Puring Meat Shop" required />
+      </div>
+
+      <!-- Product Type + Stall Number -->
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Product Type <span class="req">*</span></label>
+          <select class="form-control" id="v_product" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Meat">Meat</option>
+            <option value="Fish">Fish</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Dry-Goods">Dry Goods</option>
+            <option value="Rice-Retailer ">Rice Retailer</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Stall Number <span class="req">*</span></label>
+          <input type="text" class="form-control" id="v_stall"
+                  placeholder="ex. D-01" required />
+        </div>
+      </div>
+
+      <!-- Business Permit -->
+      <div class="form-group" style="margin-top:20px;">
+        <label class="form-label">Business Permit No. <span class="req">*</span></label>
+        <input type="text" class="form-control" id="v_permit"
+                placeholder="ex. 2022E-SNGNDN-12532" required />
+      </div>
+
+      <!-- Vendor Name + Contact -->
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Vendor Name <span class="req">*</span></label>
+          <input type="text" class="form-control" id="v_vendor"
+                  placeholder="ex. Aling Puring" required />
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Contact Number <span class="req">*</span></label>
+          <input type="text" class="form-control" id="v_contact"
+                  placeholder="ex. 09XX-XXX-XXXX" required />
+        </div>
+      </div>
+    </div>
+
+    <!-- Compliance & Sanitation -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-icon" style="background:rgba(92,56,32,.1);">🧹</div>
+        <div>
+          <div class="form-card-title">Compliance &amp; Sanitation Check</div>
+          <div class="form-card-sub">Health standards and cleanliness evaluation</div>
+        </div>
+      </div>
+
+      <!-- Sanitary Rating + Date -->
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Sanitary Practice Rating <span class="req">*</span></label>
+          <select class="form-control" id="v_sanitary" required>
+            <option value="" disabled selected>Select Status</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Poor">Poor</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Date <span class="req">*</span></label>
+          <input type="date" class="form-control" id="v_reg_date" required />
+        </div>
+      </div>
+
+      <!-- Stall Cleanliness -->
+      <div class="form-group" style="margin-top:20px;">
+        <label class="form-label">Stall Cleanliness Rating <span class="req">*</span></label>
+        <div class="check-group">
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="cleanliness" value="Daily Cleaning" />
+            <span class="dot"></span>
+            <span>Daily Cleaning</span>
+          </label>
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="cleanliness" value="Proper Waste Disposal" />
+            <span class="dot"></span>
+            <span>Proper Waste Disposal</span>
+          </label>
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="cleanliness" value="Food & Cover Protection" />
+            <span class="dot"></span>
+            <span>Food and Cover Protection</span>
+          </label>
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="cleanliness" value="Pest Control" />
+            <span class="dot"></span>
+            <span>Pest Control</span>
+          </label>
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="cleanliness" value="Handwashing Facility" />
+            <span class="dot"></span>
+            <span>Handwashing Facility</span>
+          </label>
+          <label class="check-pill checkbox-pill" style="flex:1;min-width:200px;">
+            <input type="checkbox" name="cleanliness" value="Others" id="cleanOthersCheck" />
+            <span class="dot"></span>
+            <span>Others:</span>
+            <input type="text" class="other-input" id="cleanOthersText" placeholder="Specify..." />
+          </label>
+        </div>
+      </div>
+
+      <!-- Inspector Remarks -->
+      <div class="form-group" style="margin-bottom:0;">
+        <label class="form-label">Inspector Remarks</label>
+        <textarea class="form-control" id="v_remarks"
+                  placeholder="Observations, violations or commendations..."></textarea>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions-row">
+      <button type="submit" class="btn btn-primary market-primary">
+        <span class="btn-icon">📁</span>
+        <span>Register Vendor</span>
+      </button>
+      <button type="button" class="btn btn-secondary" id="clearVendorBtn">
+        <span class="btn-icon">🔄</span>
+        <span>Clear Form</span>
+      </button>
+      <button type="button" class="btn btn-secondary" onclick="exportToCSV()">
+      <span class="btn-icon">📥</span>
+      <span>Export to CSV</span>
+      </button>
+    </div>
+  </form>
+
+  <!-- Records Table -->
+  <div class="table-section" style="margin-top:40px;">
+    <h2>Registered Vendors</h2>
+    <p id="vendorTableStatus">No vendors registered yet.</p>
+
+    <div class="data-table-wrap market-table">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Business Name</th>
+            <th>Vendor</th>
+            <th>Product</th>
+            <th>Permit No.</th>
+            <th>Stall</th>
+            <th>Sanitation</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="vendorTableBody">
+          <tr class="empty-row">
+            <td colspan="9">No vendors registered yet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
