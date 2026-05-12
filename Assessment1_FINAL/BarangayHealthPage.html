@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Barangay 3 — Health Monitoring System</title>
+  <link rel="stylesheet" href="healthstyles.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-brand">
+      <div class= "caloocan-typography">
+        <img src="../Assets/Images/Caloocan_Typography.png" alt="Caloocan_Typography">
+      </div>
+      <div class="caloocan-logo">
+        <img src="../Assets/Images/Caloocan_Logo.png" alt="Caloocan_Logo">
+      </div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  
+  <!-- Return Button -->
+  <a class="home-icon-btn back-home-btn" href="/index.html" aria-label="Back to Homepage" title="Back to Homepage">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M9 14l-4-4 4-4" />
+      <path d="M5 10h9a5 5 0 0 1 0 10h-1" />
+    </svg>
+  </a>
+
+  <!-- Page Header Banner -->
+  <div class="page-header-banner health-banner">
+    <h1 class="banner-title">Barangay Health Monitoring System</h1>
+    <p class="banner-sub">
+      Collect and manage resident health data including vaccination status, symptoms, and medical history.
+    </p>
+  </div>
+
+  <!-- Form -->
+  <form id="healthForm" novalidate>
+
+    <!-- Personal Information -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-icon" style="background:rgba(26,44,80,.1);">👤</div>
+        <div>
+          <div class="form-card-title">Personal Information</div>
+          <div class="form-card-sub">Resident details for barangay records</div>
+        </div>
+      </div>
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label class="form-label">
+          <span>Full Name</span> <span class="req">*</span>
+        </label>
+        <input type="text" class="form-control" id="h_fullname"
+              placeholder="ex. Juan Dela Cruz" required />
+      </div>
+
+      <!-- Age + Gender -->
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">
+            <span>Age</span> <span class="req">*</span>
+          </label>
+          <input type="number" class="form-control" id="h_age" min="1" max="120"
+                placeholder="ex. 35" required />
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">
+            <span>Gender</span> <span class="req">*</span>
+          </label>
+          <div class="check-group" style="margin-top:4px;">
+            <label class="check-pill">
+              <input type="radio" name="gender" value="male" />
+              <span class="dot"></span>
+              <span>Male</span>
+            </label>
+            <label class="check-pill">
+              <input type="radio" name="gender" value="female" />
+              <span class="dot"></span>
+              <span>Female</span>
+            </label>
+            <label class="check-pill">
+              <input type="radio" name="gender" value="other" />
+              <span class="dot"></span>
+              <span>Other</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="form-group" style="margin-top:20px;margin-bottom:0;">
+        <label class="form-label">
+          <span>Address</span> <span class="req">*</span>
+        </label>
+        <input type="text" class="form-control" id="h_address"
+              placeholder="ex. 123 Rizal St., Barangay 3" required />
+      </div>
+    </div>
+
+    <!-- Health & Vaccination Status -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-icon" style="background:rgba(26,44,80,.1);">💉</div>
+        <div>
+          <div class="form-card-title">Health and Vaccination Status</div>
+          <div class="form-card-sub">Current health information and medical history</div>
+        </div>
+      </div>
+
+      <!-- Vaccination Status + Last Checkup -->
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">
+            <span>Vaccination Status</span> <span class="req">*</span>
+          </label>
+          <select class="form-control" id="h_vacc_status" required>
+            <option value="">Select Status</option>
+            <option value="full"   >Fully Vaccinated</option>
+            <option value="partial">Partially Vaccinated</option>
+            <option value="none"   >Unvaccinated</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">
+            <span>Last Medical Checkup</span> <span class="req">*</span>
+          </label>
+          <input type="date" class="form-control" id="h_last_checkup" required />
+        </div>
+      </div>
+
+      <!-- Symptoms -->
+      <div class="form-group" style="margin-top:20px;">
+        <label class="form-label">
+          <span>Recent Symptoms (Select all that apply)</span> <span class="req">*</span>
+        </label>
+        <div class="check-group">
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="symptom" value="fever" />
+            <span class="dot"></span>
+            <span>Fever</span>
+          </label>
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="symptom" value="cough" />
+            <span class="dot"></span>
+            <span>Cough</span>
+          </label>
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="symptom" value="fatigue" />
+            <span class="dot"></span>
+            <span>Fatigue</span>
+          </label>
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="symptom" value="headache" />
+            <span class="dot"></span>
+            <span>Headache</span>
+          </label>
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="symptom" value="sob" />
+            <span class="dot"></span>
+            <span>Shortness of Breath</span>
+          </label>
+          <label class="check-pill checkbox-pill" style="flex:1;min-width:200px;">
+            <input type="checkbox" name="symptom" value="others" id="sympOthersCheck" />
+            <span class="dot"></span>
+            <span>Others:</span>
+            <input type="text" class="other-input" id="sympOthersText" placeholder="Specify..." />
+          </label>
+          <label class="check-pill checkbox-pill">
+            <input type="checkbox" name="symptom" value="none" id="sympNone" />
+            <span class="dot"></span>
+            <span>None</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Additional Notes -->
+      <div class="form-group" style="margin-bottom:0;">
+        <label class="form-label">
+          <span>Additional Health Notes</span> <span class="req">*</span>
+        </label>
+        <textarea class="form-control" id="h_notes"
+                  placeholder="Pre-existing conditions, medications....."></textarea>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions-row">
+      <button type="submit" class="btn btn-primary health-primary">
+        <span class="btn-icon">📋</span>
+        <span>Submit Health Record</span>
+      </button>
+      <button type="button" class="btn btn-secondary" id="clearHealthBtn">
+        <span class="btn-icon">🔄</span>
+        <span>Clear Form</span>
+      </button>
+      <button type="button" class="btn btn-secondary" onclick="exportToCSV()">
+      <span class="btn-icon">📥</span>
+      <span>Print Form</span>
+      </button>
+    </div>
+  </form>
+
+  <!-- Records Table -->
+  <div class="table-section" style="margin-top:40px;">
+    <h2>Submitted Health Records</h2>
+    <p id="healthTableStatus">No records yet.</p>
+
+    <div class="data-table-wrap health-table">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Vaccination</th>
+            <th>Symptoms</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="healthTableBody">
+          <tr>
+            <td>1</td>
+            <td>Nick Robles</td>
+            <td>23</td>
+            <td>Male</td>
+            <td>Fully Vaccinated</td>
+            <td>Fatigue, Headache</td>
+            <td>5/3/2026</td>
+            <td class="status-submitted">Submitted</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Darl Akhen</td>
+            <td>20</td>
+            <td>Male</td>
+            <td>Fully Vaccinated</td>
+            <td>Fatigue</td>
+            <td>5/3/2026</td>
+            <td class="status-submitted">Submitted</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOAST ── -->
+<div id="toast"></div>
+<script src="healthscript.js"></script>
+
+</body>
+</html>
